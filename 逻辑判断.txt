@@ -1,0 +1,164 @@
+# 如果输入是负值则将它改成正值输出，如果输入是正值则改成负值输出，如果输入非数字列则列出输入错误
+
+#定义输入提示
+userInputValue = input('请输入：')
+#判断是否可以转回为数字
+if not userInputValue.lstrip('-').isdigit():
+    print('请输入正确的数字！')
+else:
+    #将用户输入的值改为整数类型
+    userInputValue = int(userInputValue)
+    #校验是否大于0,大于0则转换为负数,小于0则转换为正数
+    if userInputValue > 0 or userInputValue < 0:
+        userInputValue = userInputValue * -1
+        #userInputValue = -userInputValue
+        print(userInputValue)
+    else:
+        print('输入的值不属于负数也不属于正数')
+      
+
+
+
+
+
+
+
+# 设计一个程序，该程序可以做如下三件事：
+#     （1）若输入是大写字符，则改成小写字符输出
+#     （2）若输入是小写字符，则改成大写字符输出
+#     （3）若输入是其它字符，则提示输入错误。  
+
+#打印提示语
+userInputValue = input('请输入：')
+#判断输入的字符个数是否唯一
+if len(userInputValue) > 1:
+    print('请输入一个字符，不要多输入')
+elif len(userInputValue) < 1:
+    print('必须输入一个字符，不能为空')
+else:
+    valid = ord(userInputValue)
+    if valid > 64 and valid < 123:
+        if valid < 91:
+            print(userInputValue.lower())
+        else:
+            print(userInputValue.upper())
+    else:
+        print('你输入的是错误字符')
+
+
+
+
+
+
+# 有一个百货公司庆祝50周年店庆，消费满十万元打9折，消费满8万元打95折，消费满5万元，可打98折，如果年龄今年是50岁的消费者，不管消费多少金额都享受95折。
+#全局常量
+AGE_CONSTANT = 50
+
+#提示用户输入年龄
+age = input('请输入你的年龄：')
+#校验年龄是否合法
+if age.isdigit():
+    age = int(age)
+    #提示用户输入消费金额
+    money = input('请输入消费金额:')
+    #金额类型转换，用于计算折扣
+    money = float(money)
+    
+    #用户应享受的折扣
+    discount = 0.0;
+    #享折扣提示语
+    title = '您享受的折扣金额为{}元'
+    
+    #校验年龄是否符合享受95折扣
+    if age >= AGE_CONSTANT:
+        discount = money * 0.95
+        print(title.format(discount))
+    else:
+        #对消费金额做比较
+        if money >= 100000:
+            discount = money * 0.9
+            print(title.format(discount))
+        elif money >= 80000 and money < 100000:
+            discount = money * 0.95
+            print(title.format(discount))
+        elif money >= 50000 and money < 80000:
+            discount = money * 0.98
+            print(title.format(discount))
+        else:
+            print('对不起，你的消费金额不能享受折扣~')
+else:
+    print('年龄必须为数字')
+
+
+
+
+
+
+
+
+# 设计一个程序，假设麦当劳打工薪资如下：
+#     （1）小于120小时（月），每小时是120小时的80%
+#     （2）等于120小时（月），每小时是150元
+#     （3）介于121小时至150小时（月），每小时是120小时的1.2倍
+#     （4）大于150小时（月），每小时是120小时的1.6倍
+
+#定义全局变量，每小时的薪资
+HOUR_SALARY = 150
+#打印提示语
+hours = input('请输入当月工作的时长:')
+#校验用户输入的值是否合法
+if hours.isdigit():
+    #转换整型
+    hours = int(hours)
+    #当月应得薪资
+    salary = 0.0
+    #薪资提示语
+    title = '当月工作时长为：{}小时，应发薪资:{}'
+    
+    if hours < 120 and hours > 0:
+        salary = (HOUR_SALARY * 0.8) * hours
+        print(title.format(hours, salary))
+    elif hours == 120:
+        salary = (HOUR_SALARY * 1) * hours
+        print(title.format(hours, salary))
+    elif hours > 120 and hours <= 150:
+        salary = (HOUR_SALARY * 1.2) * hours
+        print(title.format(hours, salary))
+    elif hours > 150:
+        salary = (HOUR_SALARY * 1.6) * hours
+        print(title.format(hours, salary))
+    else:
+        print('当月未工作，不能发放薪资')
+else:
+    print('你输入的时长不合法，必须为整数')
+
+
+
+
+
+
+
+
+
+
+# 要求用户输入3位数字，最后舍去个位数并且输出，例如输入的103则输出是100，输入的是776则输出的是770
+
+#打印提示语
+number = input('请输入数字：')
+#验证输入合法性
+if number.isdigit():
+    #转换整型
+    number = int(number)
+    
+    if number > 99 and number < 1000:
+        #除以10求前两位，得到浮点类型数值
+        converNumber = (number / 10)
+        #浮点类型数值转换整型，舍去第三位
+        number = int(converNumber)
+        #乘以10得到三位数
+        number *= 10
+        print(number)
+    else:
+        print('请输入三位数字')
+else:
+    print('输入错误，请输入整数！')

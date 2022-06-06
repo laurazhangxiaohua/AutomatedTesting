@@ -1,0 +1,20 @@
+1.建立两个列表
+	（a）1,3,5,.....99
+	（b）0,5,10,....100
+然后求上述的交集，并集，A-B,B-A,A-B对称差集，B-A对称差集
+2.建立两个列表
+	（a）1,3,5,.....99
+	（b）1至100的质数
+然后求上述的交集，并集，A-B,B-A,A-B对称差集，B-A对称差集
+3.有如下英文段落：
+So I lived my life alone, without anyone that I could really talk to, until I had an accident with my plane in the Desert of Sahara, six years ago. Something was broken in my engine. And as I had with me neither a mechanic nor any passengers, I set myself to attempt the difficult repairs all alone. It was a question of life or death for me: I had scarcely enough drinking water to last a week.
+将上述文章处理成没有重复字符的字符列表
+4.有3个夏令营集合如下：
+Math: Peter,Norton,Kevin,Mary,John,Ford,Neslon,Damon,Ivan,Tom
+Computer: Curry,James,Mary,Turisa,Tracy,Judy,Lee,Jarmul,Damon,Ivan
+Physics: Eric,Lee,Kevin,Mary,Christy,Josh,Neslon,Kazil,Linda,Tom
+分别列出下列数据：
+	(a)同时参加3个夏令营的名单
+	(b)同时参加Math和Computer夏令营的名单
+	(c)同时参加Math和Physics夏令营的名单
+	(d)同时参加Physics和Computer夏令营的名单
